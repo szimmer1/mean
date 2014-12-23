@@ -5,6 +5,7 @@ MEAN FORK
 
 ## Installing mongodb
 Is easy, but even easier with a Mac
+
     homebrew mongodb
     mkdir -p /data/db
     sudo chown 
