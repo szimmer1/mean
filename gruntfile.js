@@ -14,6 +14,14 @@ module.exports = function(grunt) {
 	// Project Configuration
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		shell: {
+			mongodb: {
+				command: 'mongod',
+				options: {
+					async: 'true'
+				}
+			}
+		},
 		watch: {
 			serverViews: {
 				files: watchFiles.serverViews,
@@ -158,10 +166,10 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['lint', 'concurrent:default']);
+	grunt.registerTask('default', ['shell:mongodb','lint', 'concurrent:default']);
 
 	// Debug task.
-	grunt.registerTask('debug', ['lint', 'concurrent:debug']);
+	grunt.registerTask('debug', ['shell:mongodb','lint', 'concurrent:debug']);
 
 	// Secure task(s).
 	grunt.registerTask('secure', ['env:secure', 'lint', 'concurrent:default']);
