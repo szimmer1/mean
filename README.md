@@ -8,7 +8,7 @@ Is easy, but even easier with a Mac
 
     homebrew mongodb
     mkdir -p /data/db
-    sudo chown 
+    sudo chown -R $USER /data/db
     
 ## Setting up MEAN
     git clone https://github.com/szimmer1/mean.git
